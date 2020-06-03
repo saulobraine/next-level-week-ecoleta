@@ -90,6 +90,23 @@ class PointsController {
     });
   }
 
+  // DELETEALL::POINTS
+  async deleteAll(request: Request, response: Response) {
+    const point_delete = await knex('points').del();
+    return response.json(point_delete);
+  }
+
+  // DELETE(ID)::POINTS
+  async delete(request: Request, response: Response) {
+    const point_id = request.params.id;
+
+    const point_delete = await knex('points')
+      .where('id', point_id)
+      .del();
+
+    return response.json(point_delete);
+  }
+
 }
 
 export default PointsController;

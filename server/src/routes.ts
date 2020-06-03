@@ -21,4 +21,10 @@ routes.get('/points/', pointsController.index);
 // SHOW(ID)::POINTS
 routes.get('/points/:id', pointsController.show);
 
+// DELETEALL::POINTS
+routes.delete('/points', pointsController.deleteAll);
+
+// DELETE(ID)::POINTS
+routes.delete('/points/:id', pointsController.delete);
+
 export default routes;
