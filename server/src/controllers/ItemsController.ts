@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import knex from '../database/connection';
 
 class ItemsController {
+
   async index(request: Request, response: Response) {
     const items = await knex('items').select('*');
 
@@ -15,6 +16,7 @@ class ItemsController {
 
     return response.json(serializedItems);
   }
+  
 }
 
 export default ItemsController;
